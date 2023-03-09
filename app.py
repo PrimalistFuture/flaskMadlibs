@@ -25,10 +25,11 @@ def get_results():
     """Return results page with results from questions"""
 
     # silly_template = silly_story.template
-    test_answers = {"place": "New York", "noun": "person", "verb": "run",
-                    "adjective": "greasy", "plural_noun": "computers"}
+    # test_answers = {"place": "New York", "noun": "person", "verb": "run",
+    #                 "adjective": "greasy", "plural_noun": "computers"}
     # silly_answers = request.args[silly_story.prompts]
-    completed_story = silly_story.generate(test_answers)
+    completed_story = silly_story.generate(request.args)
+    print(request.args)
 
 
     return render_template("results.html",
