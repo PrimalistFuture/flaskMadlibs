@@ -24,7 +24,12 @@ def get_homepage():
 def get_results():
     """Return results page with results from questions"""
 
-    silly_story = silly_story.template
-    silly_answers = request.args[f"silly_prompts"]
+    # silly_template = silly_story.template
+    test_answers = {"place": "New York", "noun": "person", "verb": "run",
+                    "adjective": "greasy", "plural_noun": "computers"}
+    # silly_answers = request.args[silly_story.prompts]
+    completed_story = silly_story.generate(test_answers)
 
-    return render_template("results.html", story = silly_story, )
+
+    return render_template("results.html",
+                            story = completed_story )
